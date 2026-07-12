@@ -1,6 +1,6 @@
 # Library-System-JavaFX
 
-基于 Spring Boot 和 JavaFX 的单体图书管理系统。
+基于 Spring Boot 和 JavaFX 的单体仓库管理系统。//这边主要是要改成仓库管理系统，属于小店类型的，具有应用空间
 
 ## 技术栈
 
