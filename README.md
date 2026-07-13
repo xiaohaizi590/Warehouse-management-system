@@ -1,4 +1,4 @@
-# Library-System-JavaFX
+# Warehouse management system
 
 基于 Spring Boot 和 JavaFX 的单体仓库管理系统。//这边主要是要改成仓库管理系统，属于小店类型的，具有应用空间
 
@@ -24,7 +24,7 @@
 ### 2. 数据库配置
 
 ```sql
-CREATE DATABASE nacon7_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE DATABASE nacon72_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 ```
 
 ### 3. 启动应用
