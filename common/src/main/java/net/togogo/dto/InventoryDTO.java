@@ -11,17 +11,18 @@ import java.time.LocalDateTime;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class BookDTO {
+public class InventoryDTO {
 
     private Long id;
-    private String title;
-    private String author;
-    private String isbn;
-    private String publisher;
+    private String productName;
+    private String productCode;
+    private String barcode;
+    private String supplier;
     private String category;
     private String description;
-    private Integer stock;
-    private Integer available;
-    private LocalDateTime publishDate;
-
+    private Integer quantity;
+    private Double unitPrice;
+    private Integer minStock;
+    private String location;
+    private LocalDateTime createTime;
 }

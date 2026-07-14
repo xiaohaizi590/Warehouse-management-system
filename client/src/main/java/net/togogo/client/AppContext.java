@@ -3,25 +3,25 @@ package net.togogo.client;
 import javafx.stage.Stage;
 import net.togogo.dto.LoginResponse;
 import net.togogo.service.AuthenticationService;
-import net.togogo.service.BookService;
+import net.togogo.service.InventoryService;
 import net.togogo.service.UserService;
 
 import java.util.concurrent.ExecutorService;
 
 public class AppContext {
     private final UserService userService;
-    private final BookService bookService;
+    private final InventoryService inventoryService;
     private final AuthenticationService authenticationService;
     private final TokenStore tokenStore;
     private final ExecutorService executorService;
     private final Stage primaryStage;
     private LoginResponse currentUser;
 
-    public AppContext(UserService userService, BookService bookService,
-                      AuthenticationService authenticationService, TokenStore tokenStore, 
+    public AppContext(UserService userService, InventoryService inventoryService,
+                      AuthenticationService authenticationService, TokenStore tokenStore,
                       ExecutorService executorService, Stage primaryStage) {
         this.userService = userService;
-        this.bookService = bookService;
+        this.inventoryService = inventoryService;
         this.authenticationService = authenticationService;
         this.tokenStore = tokenStore;
         this.executorService = executorService;
@@ -29,7 +29,7 @@ public class AppContext {
     }
 
     public UserService getUserService() { return userService; }
-    public BookService getBookService() { return bookService; }
+    public InventoryService getInventoryService() { return inventoryService; }
     public AuthenticationService getAuthenticationService() { return authenticationService; }
     public TokenStore getTokenStore() { return tokenStore; }
     public ExecutorService getExecutorService() { return executorService; }

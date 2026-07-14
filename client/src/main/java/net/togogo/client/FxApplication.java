@@ -6,7 +6,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import net.togogo.client.view.SceneCache;
 import net.togogo.service.AuthenticationService;
-import net.togogo.service.BookService;
+import net.togogo.service.InventoryService;
 import net.togogo.service.UserService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -28,11 +28,11 @@ public class FxApplication extends Application {
         executorService = Executors.newFixedThreadPool(4);
 
         UserService userService = springContext.getBean(UserService.class);
-        BookService bookService = springContext.getBean(BookService.class);
+        InventoryService inventoryService = springContext.getBean(InventoryService.class);
         AuthenticationService authenticationService = springContext.getBean(AuthenticationService.class);
         TokenStore tokenStore = springContext.getBean(TokenStore.class);
 
-        appContext = new AppContext(userService, bookService, authenticationService, tokenStore, executorService, primaryStage);
+        appContext = new AppContext(userService, inventoryService, authenticationService, tokenStore, executorService, primaryStage);
 
         onLoginSuccess = () -> {
             SceneCache.clear();
@@ -45,7 +45,7 @@ public class FxApplication extends Application {
             primaryStage.setScene(SceneCache.getLoginScene(appContext, onLoginSuccess));
         };
 
-        primaryStage.setTitle("图书管理系统");
+        primaryStage.setTitle("仓库管理系统");
         primaryStage.setWidth(1100);
         primaryStage.setHeight(750);
         primaryStage.setScene(SceneCache.getLoginScene(appContext, onLoginSuccess));

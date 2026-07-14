@@ -28,17 +28,17 @@ public class MainView {
         tabPane.setStyle("-fx-font-size: 14px;");
 
         tabPane.getTabs().addAll(
-                new BookListTab(ctx).build(),
-                new MyBorrowTab(ctx).build(),
+                new InventoryListTab(ctx).build(),
+                new MyStockTab(ctx).build(),
                 new ProfileTab(ctx).build()
         );
 
         LoginResponse user = ctx.getCurrentUser();
         if (user != null && "ADMIN".equals(user.getRole())) {
             tabPane.getTabs().addAll(
-                    new BookManageTab(ctx).build(),
+                    new InventoryManageTab(ctx).build(),
                     new UserManageTab(ctx).build(),
-                    new BorrowManageTab(ctx).build()
+                    new StockManageTab(ctx).build()
             );
         }
 
